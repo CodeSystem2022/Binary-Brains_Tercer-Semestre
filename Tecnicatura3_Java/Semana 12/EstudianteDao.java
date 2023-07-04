@@ -30,7 +30,7 @@ public class EstudianteDao {
                 estudiante.setEmail(rs.getString("email"));
                 //Falta agregarlo a la lista
                 estudiantes.add(estudiante);
-            }
+            }//Fin while
         } catch (Exception e) {
             System.out.println("Ocurrio un error al seleccionar datos: " + e.getMessage());
         } finally {
@@ -38,10 +38,10 @@ public class EstudianteDao {
                 con.close();
             } catch (Exception e) {
                 System.out.println("Ocurrio un error al cerrar la conexion: " + e.getMessage());
-            }//Fin Finally
+            }
             return estudiantes;
-        }// Fin metodo Listar
-    }
+        }//Fin Finally
+    }// Fin metodo Listar
 
     //Metodo por id -> fin by id
     public boolean buscarEstudiantePorId(Estudiante estudiante){
@@ -70,7 +70,7 @@ public class EstudianteDao {
             }//Fin Catch
         }//Fin finally
         return false;
-    }
+    }//Fin Metodo por id 
 
     //Metodo agregar un nuevo estudiante
     public boolean agregarEstudiante(Estudiante estudiante){
@@ -148,9 +148,6 @@ public class EstudianteDao {
         System.out.println("Listado de estudiantes: ");
         List<Estudiante> estudiantes = estudianteDao.listarEstudiante();
         estudiantes.forEach(System.out::println);//Funcion llamada Lambda para imprimir
-
-
-
 
         /*//Buscar por id
         var estudiante1 = new Estudiante(1);
